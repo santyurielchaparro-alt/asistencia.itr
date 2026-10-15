@@ -1,0 +1,391 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+ 
+/* ---------- Paleta ITR ---------- */
+:root {
+  color-scheme: light;
+  --negro: #1c1c1c;
+  --amarillo: #f0b90d;
+  --amarillo-claro: #fdf2d1;
+  --verde: #16a34a;
+  --rojo: #e74c3c;
+  --naranja: #eb8c19;
+  --gris: #6b7280;
+  --gris-borde: #d9dbe0;
+  --fondo: #f4f5f7;
+  --blanco: #ffffff;
+}
+ 
+/* Pisa los estilos por defecto del template de Vite */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  text-align: left;
+}
+ 
+* {
+  box-sizing: border-box;
+}
+ 
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+ 
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background-color: var(--fondo);
+  color: var(--negro);
+}
+ 
+/* ---------- Header ---------- */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+ 
+.header-controles {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+ 
+.header-controles select,
+.header-controles input {
+  padding: 12px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 8px;
+  font-size: 14px;
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+ 
+.header-controles select option {
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+ 
+.header-controles input {
+  width: 320px;
+}
+ 
+.header-controles input::placeholder {
+  color: var(--gris);
+}
+ 
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: right;
+}
+ 
+.header-info h1 {
+  margin: 0;
+  font-size: 20px;
+}
+ 
+.header-info p {
+  margin: 4px 0 0;
+  font-size: 13px;
+}
+ 
+/* Espacio para el logo (al lado del título) */
+.logo-placeholder {
+  width: 60px;
+  height: 60px;
+  border: 2px dashed var(--amarillo);
+  border-radius: 8px;
+  color: var(--amarillo);
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* Cuando pongas la imagen real, usa esta clase */
+.logo {
+  height: 60px;
+  width: auto;
+}
+ 
+/* ---------- Layout ---------- */
+.contenido {
+  display: flex;
+  align-items: stretch;
+  min-height: calc(100vh - 100px);
+}
+ 
+.sidebar {
+  width: 340px;
+  background-color: var(--blanco);
+  border-right: 1px solid var(--gris-borde);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+.principal {
+  flex: 1;
+  padding: 24px;
+  overflow-x: auto;
+}
+ 
+/* ---------- Botones ---------- */
+.btn {
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+}
+ 
+.btn-primario {
+  background-color: var(--amarillo);
+  color: var(--negro);
+  border: none;
+}
+ 
+.btn-secundario {
+  background-color: var(--blanco);
+  color: var(--negro);
+  border: 1.5px solid var(--negro);
+}
+ 
+.btn-neutro {
+  background-color: var(--fondo);
+  color: var(--gris);
+  border: 1px solid var(--gris-borde);
+}
+ 
+/* ---------- Tarjetas de estadísticas ---------- */
+.stat {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-borde);
+  border-top: 6px solid var(--color);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-top: 4px;
+}
+ 
+.stat p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--gris);
+}
+ 
+.stat strong {
+  display: block;
+  font-size: 32px;
+  margin-top: 4px;
+  color: var(--color);
+}
+ 
+.stat-presentes { --color: var(--verde); }
+.stat-ausentes { --color: var(--rojo); }
+.stat-tardanzas { --color: var(--amarillo); }
+ 
+.link-errores {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--gris);
+}
+ 
+/* ---------- Banner y tabla ---------- */
+.banner {
+  display: inline-block;
+  background-color: var(--amarillo-claro);
+  color: var(--negro);
+  font-weight: bold;
+  font-size: 14px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+ 
+table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background-color: var(--blanco);
+}
+ 
+thead {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+ 
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 13px;
+}
+ 
+tbody tr:nth-child(even) {
+  background-color: var(--fondo);
+}
+ 
+/* ---------- Botones de estado ---------- */
+.estado-btn {
+  padding: 8px 12px;
+  margin-right: 8px;
+  border-radius: 6px;
+  border: 1.5px solid var(--color);
+  background-color: var(--blanco);
+  color: var(--color);
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+ 
+.estado-btn.selected {
+  background-color: var(--color);
+  color: var(--blanco);
+}
+ 
+.estado-btn.presente { --color: var(--verde); }
+.estado-btn.ausente { --color: var(--rojo); }
+.estado-btn.justificado { --color: var(--naranja); }
+.estado-btn.tardanza { --color: #b38a0c; }
+ 
+/* Observaciones: fondo blanco, texto oscuro */
+.obs-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  font-size: 12px;
+  background-color: var(--blanco);
+  color: var(--negro);
+}
+ 
+.obs-input::placeholder {
+  color: var(--gris);
+}
+ 
+/* ---------- Pie de tabla ---------- */
+.pie-tabla {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+ 
+.btn-guardar {
+  text-align: center;
+  padding: 16px 32px;
+}
+ 
+/* ---------- Ventana flotante (reportar errores) ---------- */
+.modal-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+ 
+.modal {
+  background-color: var(--blanco);
+  color: var(--negro);
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+ 
+.modal h2 {
+  margin: 0 0 6px;
+  font-size: 18px;
+}
+ 
+.modal p {
+  margin: 0 0 12px;
+  font-size: 13px;
+  color: var(--gris);
+}
+ 
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--gris-borde);
+  border-radius: 6px;
+  font-size: 13px;
+  background-color: var(--blanco);
+  color: var(--negro);
+  resize: none;
+}
+ 
+.modal-botones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+ 
+.modal-botones .btn {
+  padding: 10px 18px;
+  text-align: center;
+}
+ 
+/* ---------- Teclado: fila activa y leyenda ---------- */
+tbody tr {
+  scroll-margin-top: 150px;
+  scroll-margin-bottom: 30px;
+}
+ 
+tbody tr.activa {
+  background-color: var(--amarillo-claro);
+}
+ 
+tbody tr.activa td:first-child {
+  box-shadow: inset 4px 0 0 var(--amarillo);
+}
+ 
+#tabla {
+  scroll-margin-top: 110px;
+}
+ 
+.leyenda {
+  margin: 0 0 14px;
+  font-size: 12px;
+  color: var(--gris);
+  line-height: 1.5;
+}
+ 
+/* ---------- Aviso ---------- */
+.aviso {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--negro);
+  color: var(--blanco);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 200;
+}
