@@ -1,19 +1,5 @@
 # Sistema de Control de Asistencia - ITR
-
-Trabajo práctico individual: **de prototipo a interfaz real**.
-Caso elegido: control de asistencia de la escuela (cursos 4° Mecánica y 4° Programación).
-
-- **Prototipo (Figma):** https://www.figma.com/design/vjnVQtmMYFlkAcLULuRDD0
 - **Código:** React + Vite
-
-## Cómo correrlo
-
-```bash
-npm install
-npm run dev
-```
-
-Después abrir el link que aparece en la terminal (normalmente http://localhost:5173).
 
 ## Qué hace
 
